@@ -149,7 +149,7 @@ function actualizarCarrito() {
 
     let items = document.createElement("div");
 
-    // Encabezado
+    
     const encabezado = document.createElement("div");
     encabezado.classList.add("carrito-header");
     encabezado.innerHTML = `
