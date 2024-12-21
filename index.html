@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FullTimeMania</title>
+    <title>Universidad Curmania</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -38,18 +39,36 @@
 
 
     <main id="main">
+        <swiper-container class="mySwiper" navigation="true">
+            <swiper-slide>
+                <div class="banner">
+                    <div class="banner-info">
+                        <h2>Aprende algo nuevo</h2>
+                        <h4>Todos los cursos en oferta!</h4>
 
-        <div class="banner">
-            <div class="banner-info">
-                <h2>Aprende algo nuevo</h2>
-                <h4>Todos los cursos en oferta!</h4>
-
-                <form action="#" id="busqueda" method="post" class="formulario">
-                    <input type="text" placeholder="¿Que te gustaría Aprender?" id="buscador">
-                    <img src="img/lupa.png" alt="lupa">
-                </form>
-            </div>
-        </div>
+                        <form action="#" id="busqueda" method="post" class="formulario">
+                            <input type="text" placeholder="¿Que te gustaría Aprender?" id="buscador">
+                            <img src="img/lupa.png" alt="lupa">
+                        </form>
+                    </div>
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="banner2">
+                    <div class="banner-info">
+                        <h2>Aprendizaje a un solo click!</h2>
+                        <h4>¿Qué estás esperando?</h4>
+                    </div>
+                </div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="banner3">
+                    <div class="banner-info">
+                        <h2>Podés pagar con cualquier método de pago</h2>
+                        <h4>¡Incluso con efectivo acercándote a cualquiera de nuestros centros! tendrás un 10% de descuento extra</h4>
+                    </div>
+                </div>
+        </swiper-container>
 
         <div class="informacion-cursos">
             <img width="48" height="48" src="https://img.icons8.com/deco-color/48/idea.png" alt="idea" />
@@ -78,8 +97,7 @@
         </div>
     </main>
 
-
-
+    <div id="contenedor-productos"></div>
 
     <footer id="footer">
 
@@ -100,6 +118,8 @@
         </div>
     </footer>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="main.js"></script>
 </body>
 
