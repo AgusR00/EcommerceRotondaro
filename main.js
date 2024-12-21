@@ -1,102 +1,20 @@
-const productos = [
-    {
-        id: "curso-01",
-        titulo: 'HTML5, CSS3, JavaScript para principiantes',
-        profesor: 'Fernando Milanesi',
-        precioAntiguo: 250,
-        imagen: "img/curso1.jpg",
-        precio: 120
-    },
-    {
-        id: "curso-02",
-        titulo: 'Curso de comida vegetariana',
-        profesor: 'Pedro Herrera',
-        precioAntiguo: 100,
-        imagen: "img/curso2.jpg",
-        precio: 70
-    },
-    {
-        id: "curso-03",
-        titulo: 'Guitarra para principiantes',
-        profesor: 'Magalí Figueroa',
-        precioAntiguo: 700,
-        imagen: "img/curso3.jpg",
-        precio: 450
-    },
-    {
-        id: "curso-04",
-        titulo: 'Huerto en tu casa',
-        profesor: 'Mariano Arjona',
-        precioAntiguo: 200,
-        imagen: "img/curso4.jpg",
-        precio: 50
-    },
-    {
-        id: "curso-05",
-        titulo: 'Decoracion de productos para tu hogar',
-        profesor: 'Patricia Vasquez',
-        precioAntiguo: 150,
-        imagen: "img/curso5.jpg",
-        precio: 80
-    },
-    {
-        id: "curso-06",
-        titulo: 'Diseño web para principiantes',
-        profesor: 'Camila Lorenzo',
-        precioAntiguo: 980,
-        imagen: "img/curso1.jpg",
-        precio: 500
-    },
-    {
-        id: "curso-07",
-        titulo: 'Comida Argentina para principiante',
-        profesor: 'Miriam Sanchez',
-        precioAntiguo: 260,
-        imagen: "img/curso2.jpg",
-        precio: 145
-    },
-    {
-        id: "curso-08",
-        titulo: 'Cosecha de verduras, frutas y vegetales',
-        profesor: 'Valentín Quiroga',
-        precioAntiguo: 190,
-        imagen: "img/curso4.jpg",
-        precio: 120
-    },
-    {
-        id: "curso-09",
-        titulo: 'Musica general',
-        profesor: 'Gonzalo Picosti',
-        precioAntiguo: 230,
-        imagen: "img/curso3.jpg",
-        precio: 110
-    },
-    {
-        id: "curso-10",
-        titulo: 'Decoración de hogar avanzado',
-        profesor: 'Rodrigo Bentancour',
-        precioAntiguo: 590,
-        imagen: "img/curso5.jpg",
-        precio: 500
-    },
-    {
-        id: "curso-11",
-        titulo: 'Javascript Moderno con ES6',
-        profesor: 'Mauro Figo',
-        precioAntiguo: 940,
-        imagen: "img/curso1.jpg",
-        precio: 600
-    },
-    {
-        id: "curso-12",
-        titulo: '100 recetas de comida natural',
-        profesor: 'Sol Rocuzzo',
-        precioAntiguo: 40,
-        imagen: "img/curso2.jpg",
-        precio: 15
-    }
-];
+let productos = [];
 
+const obtenerProductos = async () => {
+    try {
+        const response = await fetch('./productos.json');
+        const data = await response.json();
+        
+        productos = data;
+        
+        console.log(productos);
+        cargarProductos();
+    } catch (error) {
+        console.error("Error al obtener los productos:", error);
+    }
+};
+
+obtenerProductos()
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 function agregar(id) {
@@ -259,7 +177,3 @@ closeButton.addEventListener('click', () => {
 });
 
 vaciarCarritoButton.addEventListener('click', vaciarCarrito)
-
-
-cargarProductos();
-
