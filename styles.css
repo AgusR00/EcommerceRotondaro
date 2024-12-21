@@ -136,6 +136,11 @@ body {
     text-decoration: line-through;
 }
 
+.producto:hover {
+    transform: scale(110%);
+    transition: 0.4s
+}
+
 .info-card {
     flex-grow: 1;
     display: flex;
